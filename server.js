@@ -44,7 +44,7 @@ app.get("/filteredimage", async (req, res) => {
             return;
         }
         const imagePath = await filterImageFromURL(req.query.image_url);
-        res.send(imagePath);
+        res.sendFile(imagePath);
     } catch (error) {
         res.status(422).send("Error");
     }
